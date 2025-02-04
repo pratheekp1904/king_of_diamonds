@@ -18,4 +18,4 @@ In *Alice in Borderland*, players are tasked with playing deadly games to surviv
 5. Continue playing to accumulate points and challenge your prediction skills!
 
 ## You can also play the game online using streamlit server.
-## Link: https://alice-in-borderland-king-of-diamonds-game-of-averages.streamlit.app/
+### https://alice-in-borderland-king-of-diamonds-game-of-averages.streamlit.app/
