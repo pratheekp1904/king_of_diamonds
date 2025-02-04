@@ -16,3 +16,6 @@ In *Alice in Borderland*, players are tasked with playing deadly games to surviv
 3. You must strategically select numbers while keeping in mind the difficulty of making accurate predictions.
 4. The closer your prediction is to the actual average, the more points you’ll score.
 5. Continue playing to accumulate points and challenge your prediction skills!
+
+##You can also play the game online using streamlit server.
+##Link: https://alice-in-borderland-king-of-diamonds-game-of-averages.streamlit.app/
