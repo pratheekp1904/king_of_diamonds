@@ -167,6 +167,7 @@ def reset_app():
     st.session_state.numbers_submitted = False
 
 # Game Start
+# Game Start
 def game():
     # If player names have been entered, continue with the game
     if not st.session_state['player_names_entered']:
@@ -231,20 +232,19 @@ def game():
                     # Storing the number in session state and getting it from there
                     if f"{name}_number" not in st.session_state:
                         st.session_state[f"{name}_number"] = 0  # Initialize if not present
-                    number = st.text_input(f"Player: {name}:", type='password', value=st.session_state[f"{name}_number"])
+                    st.session_state[f"{name}_number"] = st.text_input(f"Player: {name}:", type='password', value=0)
 
                     # Ensure number is within the range [0, 100]
-                    if number.isdigit():
-                        number = int(number)
-                        if number < 0 or number > 100:
-                            st.warning("Number must be between 0 and 100.")
-                            number = 0  # Default to 0 if out of range
+                    if st.session_state[f"{name}_number"].isdigit():
+                        st.session_state[f"{name}_number"] = int(st.session_state[f"{name}_number"])
+                        if st.session_state[f"{name}_number"] < 0 or st.session_state[f"{name}_number"] > 100:
+                            st.warning(f"Player {name}: Number must be between 0 and 100.")
+                            st.session_state[f"{name}_number"] = 0  # Default to 0 if out of range
                     else:
-                        number = 0  # Default to 0 if the input is not a valid number
+                        st.session_state[f"{name}_number"] = 0  # Default to 0 if the input is not a valid number
 
                     # Store the player's input in session state and update the dictionary
-                    st.session_state[f"{name}_number"] = number
-                    st.session_state['player'][name][0] = number  # Update the player dictionary with the input value
+                    st.session_state['player'][name][0] = st.session_state[f"{name}_number"]  # Update the player dictionary with the input value
 
                 # Variable to keep track of whether the submit button has been pressed
                 if st.button("Confirm!"):
@@ -279,6 +279,7 @@ def game():
                     # Add the "Move Next" button to reset the app
                     if st.button("Next Round"):
                         reset_app()
+
 
 #START
 game()
